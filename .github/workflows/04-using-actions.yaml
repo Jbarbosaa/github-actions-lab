@@ -1,0 +1,13 @@
+name: 04 - Using Actions
+
+on:
+  push
+
+jobs:
+    build:
+        runs-on: [self-hosted. linux, x64]
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+            - name: Printing Folders
+              run: ls -la
