@@ -1,0 +1,15 @@
+name: 04 - Using Actions with AWS
+
+on:
+  push
+
+jobs:
+    test:
+        runs-on: [ec2,aws,linux,x64]
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+            - name: Printing Folders
+              run: ls -la && pwd
+            - name: Print Hello World
+              run: echo "Hello World from AWS EC2 Self-Hosted Runner!"
