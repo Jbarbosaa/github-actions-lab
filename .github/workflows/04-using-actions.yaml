@@ -17,5 +17,7 @@ jobs:
                   node-version: '20.x'
             - name: Install Dependencies
               run: npm install
+              working-directory: /var/my-app/my-app
             - name: Run Tests
               run: npm test
+              working-directory: /var/my-app/my-app
