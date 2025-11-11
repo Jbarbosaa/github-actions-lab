@@ -1,7 +1,7 @@
-name - 05 - Contexts
+name: 05 - Contexts
 
 on:
-  push:
+  push
 
 jobs:
   echo-data:
@@ -33,7 +33,3 @@ jobs:
             echo "Job Status: ${{ job.status }}"
             echo "Job Conclusion: ${{ job.conclusion }}"
         
-        - name: Display environment information
-            run: |
-                echo "Environment: ${{ env.ENVIRONMENT_NAME }}"
-                echo "Database URL: ${{ env.DATABASE_URL }}"
