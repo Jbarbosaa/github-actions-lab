@@ -1,4 +1,4 @@
-name: 05 - Contexts
+name: 05 - Contexts | ${{inputs.example_input}}
 
 on:
   push:
