@@ -33,3 +33,13 @@ jobs:
             echo "Job Status: ${{ job.status }}"
             echo "Job Conclusion: ${{ job.conclusion }}"
         
+        - name: Retrieve environment variables
+          run: |
+            echo "PATH: ${{ env.PATH }}"
+            echo "HOME: ${{ env.HOME }}"
+            echo "CUSTOM_VAR: ${{ env.CUSTOM_VAR || 'Not Set' }}"
+
+        - name: Retrieve Variable
+          run: |
+            echo "My Variable: ${{ vars.MY_VARIABLE}}"
+        
