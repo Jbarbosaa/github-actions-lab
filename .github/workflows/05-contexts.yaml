@@ -1,11 +1,15 @@
-name: 05 - Contexts | ${{inputs.example_input}}
+name: 05 - Contexts
 
 on:
   push:
   workflow_dispatch:
     inputs:
-        example_input:
+        Gato_1:
             description: 'An example input for the workflow'
+            required: false
+            default: 'default value'
+        Gato_2:
+            description: 'Another example input for the workflow'
             required: false
             default: 'default value'
 
@@ -48,4 +52,9 @@ jobs:
         - name: Retrieve Variable
           run: |
             echo "My Variable: ${{ vars.MY_VARIABLE}}"
+        
+        - name: Meus gatos
+          run: |
+            echo "Gato 1: ${{ inputs.Gato_1}}"
+            echo "Gato 2: ${{ inputs.Gato_2}}"
         
