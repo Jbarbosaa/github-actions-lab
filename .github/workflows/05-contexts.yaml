@@ -3,6 +3,11 @@ name: 05 - Contexts
 on:
   push:
   workflow_dispatch:
+    inputs:
+        example_input:
+            description: 'An example input for the workflow'
+            required: false
+            default: 'default value'
 
 jobs:
   echo-data:
