@@ -1,0 +1,39 @@
+name - 05 - Contexts
+
+on:
+  push:
+
+jobs:
+  echo-data:
+    runs-on: [self-hosted, Linux, x64]
+    steps:
+        - name: Display information
+          run: |
+            echo "Repository: ${{ github.repository }}"
+            echo "Event Name: ${{ github.event_name }}"
+            echo "SHA: ${{ github.sha }}"
+            echo "Ref: ${{ github.ref }}"
+            echo "Actor: ${{ github.actor }}"
+            echo "Workflow: ${{ github.workflow }}"
+            echo "Job: ${{ github.job }}"
+            echo "Run ID: ${{ github.run_id }}"
+            echo "Run Number: ${{ github.run_number }}"
+            echo "Server URL: ${{ github.server_url }}"
+            echo "API URL: ${{ github.api_url }}"
+            echo "GraphQL URL: ${{ github.graphql_url }}"
+
+        - name: Display runner information
+          run: |
+            echo "Runner Name: ${{ runner.name }}"
+            echo "Runner OS: ${{ runner.os }}"
+            echo "Runner Architecture: ${{ runner.arch }}"
+
+        - name: Display job information
+          run: |
+            echo "Job Status: ${{ job.status }}"
+            echo "Job Conclusion: ${{ job.conclusion }}"
+        
+        - name: Display environment information
+            run: |
+                echo "Environment: ${{ env.ENVIRONMENT_NAME }}"
+                echo "Database URL: ${{ env.DATABASE_URL }}"
