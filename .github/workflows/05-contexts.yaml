@@ -1,7 +1,6 @@
 name: 05 - Contexts
 
 on:
-  push:
   workflow_dispatch:
     inputs:
         Gato_1:
