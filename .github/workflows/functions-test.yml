@@ -37,3 +37,6 @@ jobs:
         FILE_HASH: ${{ hashFiles('.github/workflows/functions-test.yml')}}
       run: |
         echo "Hash: $FILE_HASH"
+
+    - name: toJSON
+      run: echo '${{ toJSON(github.event) }}'
