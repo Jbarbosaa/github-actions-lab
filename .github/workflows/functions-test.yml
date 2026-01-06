@@ -40,3 +40,8 @@ jobs:
 
     - name: toJSON
       run: echo '${{ toJSON(github.event) }}'
+
+    - name: fromJSON
+      run: |
+        echo "json={\"approved\": true}" >> $GITHUB_OUTPUT
+      id: json
