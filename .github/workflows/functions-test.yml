@@ -1,0 +1,21 @@
+name: test-functions
+
+on:
+  workflow_dispatch:
+    inputs:
+      ambiente:
+        description: "Ambiente"
+        required: true
+        default: "DEV"
+
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Contexto básico
+      run: | 
+        echo "Actor: ${{ github.actor }}"
+        echo "Branch: ${{ github.branch }}"
+        echo "Run number: ${{ github.run_number}}"
+    
