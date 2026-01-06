@@ -24,3 +24,6 @@ jobs:
         ${{ startsWith(github.ref, 'refs/heads/') }}
         echo "Rodando em branch"
     
+    - name: contains
+      if: ${{ contains(github.ref_name, 'main') }}
+      run: echo "Branch contém 'main'"
