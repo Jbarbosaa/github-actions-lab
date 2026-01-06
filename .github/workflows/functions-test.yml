@@ -33,4 +33,7 @@ jobs:
       run: echo "${{ format('Deploy {0} no ambiente {1}', github.ref_name, inputs.ambiente) }}"
 
     - name: hashFiles
-      run: echo "Hash: ${{ hashFiles('.github/workflows/functions-test.yml') }}"
+      env:
+        FILE_HASH: ${{ hashFiles('.github/workflows/functions-test.yml')}}
+      run: |
+        echo "Hash: $FILE_HASH"
