@@ -27,3 +27,6 @@ jobs:
     - name: contains
       if: ${{ contains(github.ref_name, 'main') }}
       run: echo "Branch contém 'main'"
+
+    - name: format
+      run: echo "${{ format('Deploy {0} no ambiente {1}', github.ref_name, inputs.ambiente) }}"
