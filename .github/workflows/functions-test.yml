@@ -45,3 +45,7 @@ jobs:
       run: |
         echo "json={\"approved\": true}" >> $GITHUB_OUTPUT
       id: json
+
+    - name: fromJSON (leitura)
+      if: ${{ fromJSON(steps.json.outputs.json).approved == true }}
+      run: echo "JSON aprovado"
